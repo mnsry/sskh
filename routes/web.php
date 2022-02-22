@@ -14,11 +14,11 @@ Route::get('post/{post}', function (\TCG\Voyager\Models\Post $post) {
     return view('post.show', ['post'=>$post]);
 })->name('post.show');
 
-foreach (\TCG\Voyager\Models\MenuItem::where('menu_id', 2)->cursor() as $menu) {
-    Route::get($menu->url, function(){
-        return view('menu.index');
-    })->name($menu->url);
-}
+//foreach (\TCG\Voyager\Models\MenuItem::where('menu_id', 2)->cursor() as $menu) {
+//    Route::get($menu->url, function(){
+//        return view('menu.index');
+//    })->name($menu->url);
+//}
 
 Route::get('category', function () {
     if(request()->input('categories') == null){
