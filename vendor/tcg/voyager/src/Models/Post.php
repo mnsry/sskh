@@ -54,4 +54,9 @@ class Post extends Model
     {
         return $this->belongsTo(Voyager::modelClass('Category'));
     }
+
+    public function menuItem()
+    {
+        return $this->belongsTo(Voyager::modelClass('MenuItem'), 'menu_item_id');
+    }
 }

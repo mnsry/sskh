@@ -132,4 +132,27 @@ class MenuItem extends Model
 
         return $order;
     }
+
+    public function parent()
+    {
+        return $this->belongsTo(Voyager::modelClass('MenuItem'), 'parent_id');
+    }
+
+    public function getParents() {
+        $parents = collect([]);
+
+        if($this->parent) {
+            $parent = $this->parent;
+            while(!is_null($parent)) {
+                $parents->push($parent);
+                $parent = $parent->parent;
+            }
+            return $parents;
+        }
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Voyager::modelClass('Post'), 'menu_item_id');
+    }
 }

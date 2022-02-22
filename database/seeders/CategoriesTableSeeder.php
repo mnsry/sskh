@@ -182,20 +182,38 @@ class CategoriesTableSeeder extends Seeder
 
         //Content
         $category = Category::firstOrNew([
-            'slug' => 'category-1',
+            'slug' => 'delta',
         ]);
         if (!$category->exists) {
             $category->fill([
-                'name' => 'Category 1',
+                'name' => 'دلتا',
             ])->save();
         }
 
         $category = Category::firstOrNew([
-            'slug' => 'category-2',
+            'slug' => 'fatek',
         ]);
         if (!$category->exists) {
             $category->fill([
-                'name' => 'Category 2',
+                'name' => 'فتک',
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'roshana',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'روشنا',
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'nilinor',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'نیلی نور',
             ])->save();
         }
     }

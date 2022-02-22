@@ -33,15 +33,15 @@ class TranslationsTableSeeder extends Seeder
     {
         // Adding translations for 'categories'
         //
-        $cat = Category::where('slug', 'category-1')->firstOrFail();
+        $cat = Category::where('slug', 'delta')->firstOrFail();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'categoria-1');
-            $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'Categoria 1');
+            $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'delta');
+            $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'دلتا');
         }
-        $cat = Category::where('slug', 'category-2')->firstOrFail();
+        $cat = Category::where('slug', 'fatek')->firstOrFail();
         if ($cat->exists) {
-            $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'categoria-2');
-            $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'Categoria 2');
+            $this->trans('pt', $this->arr(['categories', 'slug'], $cat->id), 'fatek');
+            $this->trans('pt', $this->arr(['categories', 'name'], $cat->id), 'فتک');
         }
     }
 
