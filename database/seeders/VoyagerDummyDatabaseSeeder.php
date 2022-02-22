@@ -20,6 +20,7 @@ class VoyagerDummyDatabaseSeeder extends Seeder
             PagesTableSeeder::class,
             TranslationsTableSeeder::class,
             PermissionRoleTableSeeder::class,
+            FakeItemSeeder::class,
         ]);
     }
 }

@@ -17,14 +17,17 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('author_id');
             $table->integer('category_id')->nullable();
+            $table->integer('menu_item_id')->nullable();
             $table->string('title');
-            $table->string('seo_title')->nullable();
             $table->text('excerpt');
             $table->text('body');
+            $table->integer('old_price')->nullable();
+            $table->integer('price')->nullable();
             $table->string('image')->nullable();
             $table->string('slug')->unique();
             $table->text('meta_description');
             $table->text('meta_keywords');
+            $table->string('seo_title')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT', 'PENDING'])->default('DRAFT');
             $table->boolean('featured')->default(0);
             $table->timestamps();

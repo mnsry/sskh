@@ -702,6 +702,7 @@ class ComposerStaticInit4f2a7b7e7a8081aa2951b3b709773c56
         'Database\\Seeders\\DataRowsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/DataRowsTableSeeder.php',
         'Database\\Seeders\\DataTypesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/DataTypesTableSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\FakeItemSeeder' => __DIR__ . '/../..' . '/database/seeders/FakeItemSeeder.php',
         'Database\\Seeders\\MenuItemsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/MenuItemsTableSeeder.php',
         'Database\\Seeders\\MenusTableSeeder' => __DIR__ . '/../..' . '/database/seeders/MenusTableSeeder.php',
         'Database\\Seeders\\PagesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/PagesTableSeeder.php',

@@ -154,6 +154,7 @@ return array(
     'Database\\Seeders\\DataRowsTableSeeder' => $baseDir . '/database/seeders/DataRowsTableSeeder.php',
     'Database\\Seeders\\DataTypesTableSeeder' => $baseDir . '/database/seeders/DataTypesTableSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
+    'Database\\Seeders\\FakeItemSeeder' => $baseDir . '/database/seeders/FakeItemSeeder.php',
     'Database\\Seeders\\MenuItemsTableSeeder' => $baseDir . '/database/seeders/MenuItemsTableSeeder.php',
     'Database\\Seeders\\MenusTableSeeder' => $baseDir . '/database/seeders/MenusTableSeeder.php',
     'Database\\Seeders\\PagesTableSeeder' => $baseDir . '/database/seeders/PagesTableSeeder.php',
