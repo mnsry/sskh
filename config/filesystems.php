@@ -37,8 +37,10 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            // Folder Path, For Save File
+            'root' => storage_path(env('APP_STORAGE_ROOT', 'app/public')),
+            // Url Path, For Read Or Get File
+            'url' => env('APP_STORAGE_URL', 'http://localhost:8000/storage'),
             'visibility' => 'public',
         ],
 
