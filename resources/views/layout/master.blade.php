@@ -3,13 +3,20 @@
 
 <head>
     <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+    <meta name='viewport'
+           content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'/>
+    <meta name="application-name" content="{{ setting('site.title') }}">
+    <meta name="author" content="مسعود منصوری">
+    <meta name="description" content="@yield('description', setting('site.description'))">
+    <meta name="keywords" content="@yield('keywords', setting('site.keywords'))">
+
+    <title>@yield('title', setting('site.title'))</title>
+
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.ico') }}">
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-          name='viewport'/>
-    <title>@yield('title', 'سولار صنعت')</title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" href="{{ asset('assets/fonts/font-awesome/css/font-awesome.min.css') }}"/>
     <!-- CSS Files -->

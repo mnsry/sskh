@@ -32,6 +32,10 @@
 
 @extends('layout.master')
 
+@section('description', setting('site.description'). ' - '. $menu->title)
+@section('keywords', implode(", ", $categoryPosts))
+@section('title', setting('site.title'). ' | '. $menu->title)
+
 @section('content')
 
     <main class="search-page default">
@@ -157,7 +161,7 @@
                         <ul class="breadcrumb-list">
                             <li>
                                 <a href="{{ route('welcome') }}">
-                                    <span>فروشگاه اینترنتی سولار صنعت</span>
+                                    <span>{{ setting('site.title') }}</span>
                                 </a>
                             </li>
                             @if(!is_null($menu->getParents()))
@@ -217,7 +221,7 @@
                                                         class="product-seller-details product-seller-details-item-grid">
                                                         <span class="product-main-seller"><span
                                                                 class="product-seller-details-label">فروشنده:
-                                                            </span>سولار صنعت</span>
+                                                            </span>{{ setting('site.title') }}</span>
                                                         <span class="product-seller-details-badge-container"></span>
                                                     </div>
                                                     <a class="product-box-img" href="{{ route('post.show', $post->id) }}">

@@ -6,13 +6,17 @@
 
     $categoryPosts = collect([]);
     foreach ($posts->load('category') as $child) {
-        $categoryPosts->push($child->category->slug);
+        $categoryPosts->push($child->category->name);
     }
     $categoryPosts = $categoryPosts->unique()->toArray();
 
 @endphp
 
 @extends('layout.master')
+
+@section('description', setting('site.description'). ' - '. implode(", ", $categoryPosts))
+@section('keywords', implode(", ", $categoryPosts))
+@section('title', setting('site.title'). ' | '. implode(", ", $categoryPosts))
 
 @section('content')
 
@@ -37,13 +41,13 @@
                                     <span class="ui-input-cleaner"></span>
                                 </div>
                                 <div class="filter-option">
-                                    <form action="{{ route('category') }}"method="post">
+                                    <form action="{{ route('category') }}" method="post">
                                         @csrf
                                         @foreach($categories as $category)
                                             <div class="checkbox">
                                                 <input id="{{$category->id}}" type="checkbox"
                                                        name="categories[]" value="{{ $category->id }}"
-                                                       @if(in_array($category->slug, $categoryPosts )) checked @endif
+                                                       @if(in_array($category->name, $categoryPosts )) checked @endif
                                                 >
                                                 <label for="{{$category->id}}">
                                                     {{$category->name}}
@@ -75,7 +79,7 @@
                         <ul class="breadcrumb-list">
                             <li>
                                 <a href="{{ route('welcome') }}">
-                                    <span>فروشگاه اینترنتی سولار صنعت</span>
+                                    <span>{{ setting('site.title') }}</span>
                                 </a>
                             </li>
                             <li><span>برند</span></li>
@@ -131,7 +135,7 @@
                                                         class="product-seller-details product-seller-details-item-grid">
                                                         <span class="product-main-seller"><span
                                                                 class="product-seller-details-label">فروشنده:
-                                                            </span>سولار صنعت</span>
+                                                            </span>{{ setting('site.title') }}</span>
                                                         <span class="product-seller-details-badge-container"></span>
                                                     </div>
                                                     <a class="product-box-img" href="{{ route('post.show', $post->id) }}">

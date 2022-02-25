@@ -4,7 +4,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4 col-5">
                 <div class="logo-area default">
                     <a href="{{ route('welcome') }}">
-                        <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="سولار صنعت">
+                        <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="{{ setting('site.title') }}">
                     </a>
                 </div>
             </div>
@@ -12,7 +12,7 @@
                 <div class="search-area default">
                     <form action="" class="search">
                         <input type="text" placeholder="نام کالا، برند و یا دسته مورد نظر خود را جستجو کنید…">
-                        <button type="submit"><img src="{{ asset('assets/img/search.png') }}" alt=""></button>
+                        <button type="submit"><img src="{{ asset('assets/img/search.png') }}" alt="{{ setting('site.title') }}"></button>
                     </form>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
                         <div class="dropdown-item">
-                            <a class="btn btn-info">ورود به سولار صنعت</a>
+                            <a class="btn btn-info">ورود به {{ setting('site.title') }}</a>
                         </div>
                         <div class="dropdown-item font-weight-bold">
                             <span>کاربر جدید هستید؟</span> <a class="register" href="#">ثبت‌نام</a>

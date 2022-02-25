@@ -1,10 +1,12 @@
 @php
     $menuParent = $post->menuItem->getParents();
-    //dd($menuParent);
-    //$menuItem = \TCG\Voyager\Models\MenuItem::where('url', $post->id)->first();
 @endphp
 
 @extends('layout.master')
+
+@section('description', setting('site.description'). ' - '. $post->meta_description)
+@section('keywords', $post->meta_keywords)
+@section('title', setting('site.title'). ' | '. $post->seo_title)
 
 @section('content')
     <main class="single-product default">
@@ -14,7 +16,7 @@
                     <nav>
                         <ul class="breadcrumb">
                             <li>
-                                <a href="{{ route('welcome') }}"><span>فروشگاه اینترنتی سولار صنعت</span></a>
+                                <a href="{{ route('welcome') }}"><span>{{ setting('site.title') }}</span></a>
                             </li>
                             @foreach($menuParent->reverse() as $child)
                                 <li>
@@ -63,107 +65,13 @@
 
                                 <div class="product-variants default">
                                     {{ $post->excerpt }}
+                                    <br>
+                                    {!! $post->body !!}
                                 </div>
 
                             </div>
                         </div>
                     </article>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="container">
-                    <div class="col-12 default no-padding">
-                        <div class="product-tabs default">
-                            <div class="box-tabs default">
-                                <ul class="nav" role="tablist">
-                                    <li class="box-tabs-tab">
-                                        <a class="active" data-toggle="tab" href="#desc" role="tab" aria-expanded="true">
-                                            <i class="now-ui-icons objects_umbrella-13"></i> نقد و بررسی
-                                        </a>
-                                    </li>
-                                    <li class="box-tabs-tab">
-                                        <a data-toggle="tab" href="#params" role="tab" aria-expanded="false">
-                                            <i class="now-ui-icons shopping_cart-simple"></i> مشخصات
-                                        </a>
-                                    </li>
-                                    <li class="box-tabs-tab">
-                                        <a data-toggle="tab" href="#comments" role="tab" aria-expanded="false">
-                                            <i class="now-ui-icons shopping_shop"></i> نظرات کاربران
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="card-body default">
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div class="tab-pane active" id="desc" role="tabpanel" aria-expanded="true">
-                                            <article>
-                                                <h2 class="param-title mb-0">
-                                                    نقد و بررسی تخصصی
-                                                    <span> {{ $post->title }} </span>
-                                                </h2>
-                                                <div class="card card-body ">
-                                                    {!! $post->body !!}
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="tab-pane params" id="params" role="tabpanel" aria-expanded="false">
-                                            <article>
-                                                <h2 class="param-title">
-                                                    مشخصات فنی
-                                                    <span>{{ $post->title }}</span>
-                                                </h2>
-                                                <section>
-                                                    <h3 class="params-title">مشخصات کلی</h3>
-                                                    <ul class="params-list">
-{{--                                                        <li>--}}
-{{--                                                            <div class="params-list-key">--}}
-{{--                                                                <span class="block">ابعاد</span>--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="params-list-value">--}}
-{{--                                                                    <span class="block">--}}
-{{--                                                                        7.7 × 70.9 × 143.6 میلی‌متر--}}
-{{--                                                                    </span>--}}
-{{--                                                            </div>--}}
-{{--                                                        </li>--}}
-                                                    </ul>
-                                                </section>
-
-                                            </article>
-                                        </div>
-                                        <div class="tab-pane" id="comments" role="tabpanel" aria-expanded="false">
-                                            <article>
-                                                <h2 class="param-title">
-                                                    نظرات کاربران
-                                                    <span>0 نظر</span>
-                                                </h2>
-                                                <div class="comments-area default">
-                                                    <ol class="comment-list">
-                                                        <!-- #comment-## -->
-{{--                                                        <li>--}}
-{{--                                                            <div class="comment-body">--}}
-{{--                                                                <div class="comment-author">--}}
-{{--                                                                    <img alt="" src="assets/img/default-avatar.png" class="avatar"><cite class="fn">حسن</cite>--}}
-{{--                                                                    <span class="says">گفت:</span> </div>--}}
-
-{{--                                                                <div class="commentmetadata"><a href="#">--}}
-{{--                                                                        اسفند ۲۰, ۱۳۹۶ در ۹:۴۱ ب.ظ</a> </div>--}}
-
-{{--                                                                <p>لورم ایپسوم متن ساختگی</p>--}}
-
-{{--                                                                <div class="reply"><a class="comment-reply-link" href="#">پاسخ</a></div>--}}
-{{--                                                            </div>--}}
-{{--                                                        </li>--}}
-                                                        <!-- #comment-## -->
-                                                    </ol>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

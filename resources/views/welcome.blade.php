@@ -6,6 +6,10 @@
 
 @extends('layout.master')
 
+@section('description', setting('site.description'))
+@section('keywords', setting('site.keywords'))
+@section('title', setting('site.title'))
+
 @section('content')
     <main class="main default">
         <div class="container">
@@ -14,9 +18,9 @@
             <div class="row banner-ads">
                 <div class="col-12">
                     <section class="banner">
-                        <a href="#">
-                            <img src="{{ Voyager::Image(setting('site.home_banner')) }}" alt="سولار صنعت">
-                        </a>
+{{--                        <a href="#">--}}
+                            <img src="{{ Voyager::Image(setting('site.home_banner')) }}" alt="{{ setting('site.title') }}">
+{{--                        </a>--}}
                     </section>
                 </div>
             </div>
@@ -59,16 +63,18 @@
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <div class="widget-banner card">
-                                        <a href="#" target="_blank">
-                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini1')) }}" alt="سولار صنعت">
-                                        </a>
+{{--                                        <a href="#" target="_blank">--}}
+                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini1')) }}"
+                                                 alt="{{ setting('site.title') }}">
+{{--                                        </a>--}}
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="widget-banner card">
-                                        <a href="#" target="_top">
-                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini2')) }}" alt="سولار صنعت">
-                                        </a>
+{{--                                        <a href="#" target="_top">--}}
+                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini2')) }}"
+                                                 alt="{{ setting('site.title') }}">
+{{--                                        </a>--}}
                                     </div>
                                 </div>
                             </div>
@@ -143,31 +149,31 @@
                             <div class="row">
                                 <div class="feature-item col-12">
                                     <a href="#" target="_blank">
-                                        <img src="{{ asset('assets/img/svg/return-policy.svg') }}">
+                                        <img src="{{ asset('assets/img/svg/return-policy.svg') }}" alt="{{ setting('site.title') }}">
                                     </a>
                                     <p>ضمانت برگشت</p>
                                 </div>
                                 <div class="feature-item col-6">
                                     <a href="#" target="_blank">
-                                        <img src="{{ asset('assets/img/svg/payment-terms.svg') }}">
+                                        <img src="{{ asset('assets/img/svg/payment-terms.svg') }}" alt="{{ setting('site.title') }}">
                                     </a>
                                     <p>پرداخت درمحل</p>
                                 </div>
                                 <div class="feature-item col-6">
                                     <a href="#" target="_blank">
-                                        <img src="{{ asset('assets/img/svg/delivery.svg') }}">
+                                        <img src="{{ asset('assets/img/svg/delivery.svg') }}" alt="{{ setting('site.title') }}">
                                     </a>
                                     <p>تحویل اکسپرس</p>
                                 </div>
                                 <div class="feature-item col-6">
                                     <a href="#" target="_blank">
-                                        <img src="{{ asset('assets/img/svg/origin-guarantee.svg') }}">
+                                        <img src="{{ asset('assets/img/svg/origin-guarantee.svg') }}" alt="{{ setting('site.title') }}">
                                     </a>
                                     <p>تضمین بهترین قیمت</p>
                                 </div>
                                 <div class="feature-item col-6">
                                     <a href="#" target="_blank">
-                                        <img src="{{ asset('assets/img/svg/contact-us.svg') }}">
+                                        <img src="{{ asset('assets/img/svg/contact-us.svg') }}" alt="{{ setting('site.title') }}">
                                     </a>
                                     <p>پشتیبانی 24 ساعته</p>
                                 </div>

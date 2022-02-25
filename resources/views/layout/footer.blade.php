@@ -8,31 +8,31 @@
             <div class="row">
                 <div class="service-item col">
                     <a href="#">
-                        <img src="{{ asset('assets/img/svg/delivery.svg') }}" alt="">
+                        <img src="{{ asset('assets/img/svg/delivery.svg') }}" alt="{{ setting('site.title') }}">
                     </a>
                     <p>تحویل اکسپرس</p>
                 </div>
                 <div class="service-item col">
                     <a href="#">
-                        <img src="{{ asset('assets/img/svg/contact-us.svg') }}">
+                        <img src="{{ asset('assets/img/svg/contact-us.svg') }}" alt="{{ setting('site.title') }}">
                     </a>
                     <p>پشتیبانی 24 ساعته</p>
                 </div>
                 <div class="service-item col">
                     <a href="#">
-                        <img src="{{ asset('assets/img/svg/payment-terms.svg') }}">
+                        <img src="{{ asset('assets/img/svg/payment-terms.svg') }}" alt="{{ setting('site.title') }}">
                     </a>
                     <p>پرداخت درمحل</p>
                 </div>
                 <div class="service-item col">
                     <a href="#">
-                        <img src="{{ asset('assets/img/svg/return-policy.svg') }}">
+                        <img src="{{ asset('assets/img/svg/return-policy.svg') }}" alt="{{ setting('site.title') }}">
                     </a>
                     <p>۷ روز ضمانت بازگشت</p>
                 </div>
                 <div class="service-item col">
                     <a href="#">
-                        <img src="{{ asset('assets/img/svg/origin-guarantee.svg') }}">
+                        <img src="{{ asset('assets/img/svg/origin-guarantee.svg') }}" alt="{{ setting('site.title') }}">
                     </a>
                     <p>ضمانت اصل بودن کالا</p>
                 </div>
@@ -43,7 +43,7 @@
                 <div class="col-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
-                            <h3 class="card-title">راهنمای خرید از سولار صنعت</h3>
+                            <h3 class="card-title">راهنمای خرید از {{ setting('site.title') }}</h3>
                         </header>
                         <ul class="footer-menu">
                             <li>
@@ -82,11 +82,11 @@
                 <div class="col-6 col-lg-3">
                     <div class="widget-menu widget card">
                         <header class="card-header">
-                            <h3 class="card-title">با سولار صنعت</h3>
+                            <h3 class="card-title">با {{ setting('site.title') }}</h3>
                         </header>
                         <ul class="footer-menu">
                             <li>
-                                <a href="#">فروش در سولار صنعت</a>
+                                <a href="#">فروش در {{ setting('site.title') }}</a>
                             </li>
                             <li>
                                 <a href="#">همکاری با سازمان‌ها</a>
@@ -95,10 +95,10 @@
                                 <a href="#">فرصت‌های شغلی</a>
                             </li>
                             <li>
-                                <a href="#">تماس با سولار صنعت</a>
+                                <a href="#">تماس با {{ setting('site.title') }}</a>
                             </li>
                             <li>
-                                <a href="#">درباره سولار صنعت</a>
+                                <a href="#">درباره {{ setting('site.title') }}</a>
                             </li>
                         </ul>
                     </div>
@@ -107,7 +107,7 @@
                     <div class="socials">
                         <p>ما را در شبکه های اجتماعی دنبال کنید.</p>
                         <div class="footer-social">
-                            <a href="https://instagram.com/mans.ory" target="_blank"><i class="fa fa-instagram"></i>اینستاگرام سولار صنعت</a>
+                            <a href="https://instagram.com/mans.ory" target="_blank"><i class="fa fa-instagram"></i>اینستاگرام {{ setting('site.title') }}</a>
                         </div>
                     </div>
                 </div>
@@ -126,13 +126,13 @@
         <div class="container">
             <div class="row">
                 <div class="site-description col-12 col-md-7 col-lg-7">
-                    <h1 class="site-title">فروشگاه اینترنتی سولار صنعت، بررسی، انتخاب و خرید آنلاین</h1>
+                    <h1 class="site-title">فروشگاه اینترنتی {{ setting('site.title') }}، بررسی، انتخاب و خرید آنلاین</h1>
                     <p>
-                        سولار صنعت به عنوان یکی از بهترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با
+                        {{ setting('site.title') }} به عنوان یکی از بهترین فروشگاه های اینترنتی با بیش از یک دهه تجربه، با
                         پایبندی به سه اصل کلیدی، پرداخت در
                         محل، 7 روز ضمانت بازگشت کالا و تضمین اصل‌بودن کالا، موفق شده تا همگام با فروشگاه‌های
                         معتبر جهان، به بزرگ‌ترین فروشگاه
-                        اینترنتی ایران تبدیل شود. به محض ورود به سولار صنعت با یک سایت پر از کالا رو به رو
+                        اینترنتی ایران تبدیل شود. به محض ورود به {{ setting('site.title') }} با یک سایت پر از کالا رو به رو
                         می‌شوید! هر آنچه که نیاز دارید و به
                         ذهن شما خطور می‌کند در اینجا پیدا خواهید کرد.
                     </p>
@@ -154,7 +154,7 @@
         <div class="container">
             <p>
                 کلیه حقوق این سایت متعلق
-                به شرکت سولار صنعت خراسان (فروشگاه آنلاین سولار صنعت) می‌باشد.
+                به شرکت {{ setting('site.title') }} خراسان (فروشگاه آنلاین {{ setting('site.title') }}) می‌باشد.
             </p>
         </div>
     </div>

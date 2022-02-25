@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('description', setting('site.description'). ' - '. $page->meta_description)
+@section('keywords', $page->meta_keywords)
+@section('title', setting('site.title'). ' | '. $page->title)
+
 @section('content')
 
     <main class="single-product default">
@@ -11,7 +15,7 @@
                         <ul class="breadcrumb">
                             <li>
                                 <a href="{{ route('welcome') }}">
-                                    <span>فروشگاه اینترنتی سولار صنعت</span>
+                                    <span>{{ setting('site.title') }}</span>
                                 </a>
                             </li>
                             <li><span>{{ $page->title }}</span></li>

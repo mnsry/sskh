@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="{{ route('welcome') }}">
-                <img src="{{ Voyager::Image(setting('site.logo')) }}" height="24px" alt="سولار صنعت">
+                <img src="{{ Voyager::Image(setting('site.logo')) }}" height="24px" alt="{{ setting('site.title') }}">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
@@ -14,7 +14,7 @@
             <div class="search-nav default">
                 <form action="">
                     <input type="text" placeholder="جستجو ...">
-                    <button type="submit"><img src="assets/img/search.png" alt=""></button>
+                    <button type="submit"><img src="{{ asset('assets/img/search.png') }}" alt="{{ setting('site.title') }}"></button>
                 </form>
                 <ul>
                     <li><a href="#"><i class="now-ui-icons users_single-02"></i></a></li>
@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <div class="logo-nav-res default text-center">
                 <a href="{{ route('welcome') }}">
-                    <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="سولار صنعت">
+                    <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="{{ setting('site.title') }}">
                 </a>
             </div>
             {{ menu('site', 'layout.myNav') }}
