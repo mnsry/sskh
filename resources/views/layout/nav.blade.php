@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" href="{{ route('welcome') }}">
-                <img src="{{ asset('assets/img/logo.png') }}" height="24px" alt="">
+                <img src="{{ Voyager::Image(setting('site.logo')) }}" height="24px" alt="سولار صنعت">
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navigation" aria-controls="navigation-index" aria-expanded="false"
@@ -26,7 +26,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <div class="logo-nav-res default text-center">
                 <a href="{{ route('welcome') }}">
-                    <img src="{{ asset('assets/img/logo.png') }}" height="36px" alt="">
+                    <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="سولار صنعت">
                 </a>
             </div>
             {{ menu('site', 'layout.myNav') }}

@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\Menu;
 use TCG\Voyager\Models\MenuItem;
+use TCG\Voyager\Models\Setting;
 
 class FakeItemSeeder extends Seeder
 {
@@ -187,5 +188,35 @@ class FakeItemSeeder extends Seeder
             'order'      => 15,
             'route'      => null,
         ])->save();
+
+        Setting::firstOrCreate([
+            'key' => 'site.home_banner',
+            'display_name' => 'Site Home Banner',
+            'value'        => '',
+            'details'      => '',
+            'type'         => 'image',
+            'order'        => 4,
+            'group'        => 'Site',
+        ]);
+
+        Setting::firstOrCreate([
+            'key' => 'site.home_banner_mini1',
+            'display_name' => 'Site Home Banner Mini1',
+            'value'        => '',
+            'details'      => '',
+            'type'         => 'image',
+            'order'        => 6,
+            'group'        => 'Site',
+        ]);
+
+        Setting::firstOrCreate([
+            'key' => 'site.home_banner_mini2',
+            'display_name' => 'Site Home Banner Mini2',
+            'value'        => '',
+            'details'      => '',
+            'type'         => 'image',
+            'order'        => 7,
+            'group'        => 'Site',
+        ]);
     }
 }

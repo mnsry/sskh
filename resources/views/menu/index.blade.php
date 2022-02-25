@@ -1,13 +1,4 @@
 @php
-    $categoriesParent = \TCG\Voyager\Models\Category::whereNull('parent_id')->get();
-    $categoriesAll = $categoriesParent->load('children');
-    $categories = collect([]);
-    foreach ($categoriesAll as $category) {
-        $categories->push($category);
-        foreach ($category->children as $cat) {
-            $categories->push($cat);
-        }
-    }
 
     $menu  = \TCG\Voyager\Models\MenuItem::where('url', request()->path())->first();
     $menus = collect([]);
@@ -19,12 +10,23 @@
     }
     $menus->push($menu->id);
 
+
     $posts = \TCG\Voyager\Models\Post::whereIn('menu_item_id', $menus)->get();
     $categoryPosts = collect([]);
     foreach ($posts->load('category') as $child) {
         $categoryPosts->push($child->category->slug);
     }
     $categoryPosts = $categoryPosts->unique()->toArray();
+
+
+    $categoriesParent = \TCG\Voyager\Models\Category::whereNull('parent_id')->get();
+    $categories = collect([]);
+    foreach ($categoriesParent->load('children') as $category) {
+        $categories->push($category);
+        foreach ($category->children as $cat) {
+            $categories->push($cat);
+        }
+    }
 
 @endphp
 
@@ -56,13 +58,13 @@
                                                 </a>
                                             </li>
                                             @foreach ($menu->children as $child)
-                                                <li>
+                                                <li style="padding-right: 20px; padding-top: 10px">
                                                     <a href="{{ $child->url }}">
                                                         <span>{{ $child->title }}</span>
                                                     </a>
                                                 </li>
                                                 @foreach ($child->children as $ch)
-                                                    <li>
+                                                    <li style="padding-right: 40px; padding-top: 10px">
                                                         <a href="{{ $ch->url }}">
                                                             <span class="sun_menu">{{ $ch->title }}</span>
                                                         </a>
@@ -79,13 +81,13 @@
                                                         </a>
                                                     </li>
                                                     @foreach ($item->children as $child)
-                                                        <li>
+                                                        <li style="padding-right: 20px; padding-top: 10px">
                                                             <a href="{{ $child->url }}">
                                                                 <span>{{ $child->title }}</span>
                                                             </a>
                                                         </li>
                                                         @foreach ($child->children as $ch)
-                                                            <li>
+                                                            <li style="padding-right: 40px; padding-top: 10px">
                                                                 <a href="{{ $ch->url }}">
                                                                     <span class="sun_menu">{{ $ch->title }}</span>
                                                                 </a>
@@ -117,7 +119,8 @@
                                     <span class="ui-input-cleaner"></span>
                                 </div>
                                 <div class="filter-option">
-                                    <form action="{{ route('category') }}">
+                                    <form action="{{ route('category') }}" method="post">
+                                        @csrf
                                         @foreach($categories as $category)
                                             <div class="checkbox">
                                                 <input id="{{$category->id}}" type="checkbox"

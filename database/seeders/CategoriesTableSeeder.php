@@ -200,20 +200,29 @@ class CategoriesTableSeeder extends Seeder
         }
 
         $category = Category::firstOrNew([
-            'slug' => 'roshana',
+            'slug' => 'ls',
         ]);
         if (!$category->exists) {
             $category->fill([
-                'name' => 'روشنا',
+                'name' => 'ال اس',
             ])->save();
         }
 
         $category = Category::firstOrNew([
-            'slug' => 'nilinor',
+            'slug' => 'invet',
         ]);
         if (!$category->exists) {
             $category->fill([
-                'name' => 'نیلی نور',
+                'name' => 'اینوت',
+            ])->save();
+        }
+
+        $category = Category::firstOrNew([
+            'slug' => 'siemens',
+        ]);
+        if (!$category->exists) {
+            $category->fill([
+                'name' => 'زیمنس',
             ])->save();
         }
     }

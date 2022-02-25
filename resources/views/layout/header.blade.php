@@ -4,7 +4,7 @@
             <div class="col-lg-2 col-md-3 col-sm-4 col-5">
                 <div class="logo-area default">
                     <a href="{{ route('welcome') }}">
-                        <img src="{{ asset('assets/img/logo.png') }}" alt="">
+                        <img src="{{ Voyager::Image(setting('site.logo')) }}" alt="سولار صنعت">
                     </a>
                 </div>
             </div>

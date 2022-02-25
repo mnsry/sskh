@@ -24,14 +24,13 @@
                 <div class="col-12">
                     <article class="product">
                         <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-sm-12">
                                 <div class="product-gallery default">
-                                    <img class="zoom-img" id="img-product-zoom" src="{{ Voyager::Image($page->image) }}"
-                                         data-zoom-image="assets/img/product/13351544.jpg" width="411"/>
+                                    <img src="{{ Voyager::Image($page->image) }}" alt="{{ $page->title }}" width="411"/>
                                 </div>
                             </div>
 
-                            <div class="col-lg-8 col-md-6 col-sm-12">
+                            <div class="col-lg-8 col-sm-12">
                                 <div class="product-title default">
                                     <h1><span>{{ $page->title }}</span></h1>
                                 </div>

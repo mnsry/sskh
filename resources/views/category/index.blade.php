@@ -2,9 +2,7 @@
 
     $categories = \TCG\Voyager\Models\Category::all();
 
-    $categories_id = request()->input('categories');
-
-    $posts = \TCG\Voyager\Models\Post::whereIn('category_id', $categories_id)->get();
+    $posts = \TCG\Voyager\Models\Post::whereIn('category_id', request()->input('categories'))->get();
 
     $categoryPosts = collect([]);
     foreach ($posts->load('category') as $child) {
@@ -39,7 +37,8 @@
                                     <span class="ui-input-cleaner"></span>
                                 </div>
                                 <div class="filter-option">
-                                    <form action="{{ route('category') }}">
+                                    <form action="{{ route('category') }}"method="post">
+                                        @csrf
                                         @foreach($categories as $category)
                                             <div class="checkbox">
                                                 <input id="{{$category->id}}" type="checkbox"

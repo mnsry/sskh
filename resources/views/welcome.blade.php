@@ -1,4 +1,5 @@
 @php
+    $categories = \TCG\Voyager\Models\Category::all();
     $pages = \TCG\Voyager\Models\Page::all();
     $posts = \TCG\Voyager\Models\Post::all();
 @endphp
@@ -14,7 +15,7 @@
                 <div class="col-12">
                     <section class="banner">
                         <a href="#">
-                            <img src="{{ asset('assets/img/banner/page1.jpg') }}" alt="">
+                            <img src="{{ Voyager::Image(setting('site.home_banner')) }}" alt="سولار صنعت">
                         </a>
                     </section>
                 </div>
@@ -59,14 +60,14 @@
                                 <div class="col-12 col-lg-6">
                                     <div class="widget-banner card">
                                         <a href="#" target="_blank">
-                                            <img class="img-fluid" src="{{ asset('assets/img/banner/banner1.png') }}" alt="">
+                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini1')) }}" alt="سولار صنعت">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-6">
                                     <div class="widget-banner card">
                                         <a href="#" target="_top">
-                                            <img class="img-fluid" src="{{ asset('assets/img/banner/banner2.png') }}" alt="">
+                                            <img class="img-fluid" src="{{ Voyager::Image(setting('site.home_banner_mini2')) }}" alt="سولار صنعت">
                                         </a>
                                     </div>
                                 </div>
@@ -184,31 +185,18 @@
                             <h3 class="card-title"><span>برندهای ویژه</span></h3>
                         </header>
                         <div class="owl-carousel">
-                            <div class="item">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/brand/1076.png') }}" alt="">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/brand/1078.png') }}" alt="">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/brand/1080.png') }}" alt="">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/brand/2315.png') }}" alt="">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="{{ asset('assets/img/brand/5189.png') }}" alt="">
-                                </a>
-                            </div>
+                            @foreach($categories as $category)
+                                <div class="item">
+                                    <form action="{{ route('category') }}" method="post">
+                                        @csrf
+                                        <button class="btn btn-link" name="categories[]" value="{{ $category->id }}">
+                                            <img src="{{ Voyager::Image($category->image) }}"
+                                                 width="205px" alt="{{ $category->name }} "
+                                            >
+                                        </button>
+                                    </form>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
