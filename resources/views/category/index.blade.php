@@ -10,6 +10,8 @@
     }
     $categoryPosts = $categoryPosts->unique()->toArray();
 
+    $end = end($categoryPosts);
+
 @endphp
 
 @extends('layout.master')
@@ -75,7 +77,7 @@
                 </aside>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 order-2 order-md-12">
-                    <div class="breadcrumb-section default">
+                    <div class="breadcrumb-section default d-none d-sm-block">
                         <ul class="breadcrumb-list">
                             <li>
                                 <a href="{{ route('welcome') }}">
@@ -91,12 +93,35 @@
                         </ul>
                     </div>
 
+                    <nav class="d-sm-none">
+                        <ul class="breadcrumb bg-white">
+                            <li>
+                                <a href="{{ route('welcome') }}">
+                                    <span>{{ setting('site.title') }}</span>
+                                    <span class="text-black-50"> / </span>
+                                </a>
+                            </li>
+                            <li>
+                                <span>  برند</span>
+                                <span class="text-black-50"> / </span>
+                            </li>
+                            @foreach($categoryPosts as $child)
+                                <li>
+                                    <span>  {{ ($child) }} </span>
+                                    @if($end != $child)
+                                        <span> / </span>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
+                    </nav>
+
                     <div class="listing default">
                         <div class="listing-counter d-none d-sm-block">{{ $posts->count() }} کالا </div>
 
                         <div class="listing-header default">
                             <ul class="listing-sort nav nav-tabs justify-content-center" role="tablist"
-                                data-label="مرتب‌سازی:">
+                                data-label="مرتب‌سازی بر اساس:">
                                 <li>
                                     <a class="active" data-toggle="tab" href="#most-seller" role="tab"
                                        aria-expanded="false">جدیدترین</a>

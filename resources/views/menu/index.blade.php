@@ -206,7 +206,7 @@
 
                         <div class="listing-header default">
                             <ul class="listing-sort nav nav-tabs justify-content-center" role="tablist"
-                                data-label="مرتب‌سازی:">
+                                data-label="مرتب‌سازی بر اساس:">
                                 <li>
                                     <a class="active" data-toggle="tab" href="#most-seller" role="tab"
                                        aria-expanded="false">جدیدترین</a>
