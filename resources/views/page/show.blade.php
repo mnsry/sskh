@@ -40,11 +40,9 @@
 
                                 <div class="product-variants default">
                                     {{ $page->excerpt }}
+                                    <br>
+                                    {!! $page->body !!}
                                 </div>
-
-{{--                                <div class="product-variants default">--}}
-{{--                                    {!! $page->body !!}--}}
-{{--                                </div>--}}
                             </div>
                         </div>
                     </article>
