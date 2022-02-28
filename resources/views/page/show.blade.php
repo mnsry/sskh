@@ -33,7 +33,19 @@
                                 </div>
                             </div>
 
-                            
+                            <div class="col-lg-8 col-sm-12">
+                                <div class="product-title default">
+                                    <h1><span>{{ $page->title }}</span></h1>
+                                </div>
+
+{{--                                <div class="product-variants default">--}}
+{{--                                    {{ $page->excerpt }}--}}
+{{--                                </div>--}}
+
+{{--                                <div class="product-variants default">--}}
+{{--                                    {!! $page->body !!}--}}
+{{--                                </div>--}}
+                            </div>
                         </div>
                     </article>
                 </div>
