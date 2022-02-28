@@ -38,9 +38,9 @@
                                     <h1><span>{{ $page->title }}</span></h1>
                                 </div>
 
-{{--                                <div class="product-variants default">--}}
-{{--                                    {{ $page->excerpt }}--}}
-{{--                                </div>--}}
+                                <div class="product-variants default">
+                                    {{ $page->excerpt }}
+                                </div>
 
 {{--                                <div class="product-variants default">--}}
 {{--                                    {!! $page->body !!}--}}
