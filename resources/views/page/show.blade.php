@@ -34,13 +34,13 @@
 
                             <div class="col-lg-8 col-sm-12">
                                 <div class="product-title default">
-                                    <h1><span>{{ $post->title }}</span></h1>
+                                    <h1><span>{{ $page->title }}</span></h1>
                                 </div>
 
                                 <div class="product-variants default">
-                                    {{ $post->excerpt }}
+                                    {{ $page->excerpt }}
                                     <br>
-{{--                                    {!! $post->body !!}--}}
+{{--                                    {!! $page->body !!}--}}
                                 </div>
                             </div>
                         </div>
