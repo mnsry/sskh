@@ -157,46 +157,59 @@
                 </aside>
 
                 <div class="col-12 col-sm-12 col-md-8 col-lg-9 order-2 order-md-12">
-                    <div class="breadcrumb-section default">
+                    <div class="breadcrumb-section default d-none d-sm-block">
                         <ul class="breadcrumb-list">
                             <li>
                                 <a href="{{ route('welcome') }}">
-                                    <span>{{ setting('site.title') }}</span>
+                                    <span> {{ setting('site.title') }} </span>
                                 </a>
                             </li>
                             @if(!is_null($menu->getParents()))
                                 @foreach($menu->getParents()->reverse() as $item)
                                     <li>
                                         <a href="{{ $item->url }}">
-                                            <span>{{ $item->title }}</span>
+                                            <span> {{ $item->title }} </span>
                                         </a>
                                     </li>
                                 @endforeach
                             @endif
-                            <li><span>{{ $menu->title }}</span></li>
+                            <li><span> {{ $menu->title }} </span></li>
                         </ul>
                     </div>
 
+                    <nav class="d-sm-none">
+                        <ul class="breadcrumb bg-white">
+                            <li>
+                                <a href="{{ route('welcome') }}">
+                                    <span> {{ setting('site.title') }} </span>
+                                    <span class="text-black-50"> / </span>
+                                </a>
+                            </li>
+                            @if(!is_null($menu->getParents()))
+                                @foreach($menu->getParents()->reverse() as $item)
+                                    <li>
+                                        <a href="{{ $item->url }}">
+                                            <span>  {{ $item->title }} </span>
+                                            <span class="text-black-50"> / </span>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            @endif
+                            <li>
+                                <span class="h6">  {{ $menu->title }} </span>
+                            </li>
+                        </ul>
+                    </nav>
+
                     <div class="listing default">
-                        <div class="listing-counter">{{ $posts->count() }} کالا </div>
+                        <div class="listing-counter d-none d-sm-block">{{ $posts->count() }} کالا </div>
 
                         <div class="listing-header default">
                             <ul class="listing-sort nav nav-tabs justify-content-center" role="tablist"
-                                data-label="مرتب‌سازی بر اساس :">
+                                data-label="مرتب‌سازی:">
                                 <li>
-                                    <a class="active" data-toggle="tab" href="#related" role="tab"
-                                       aria-expanded="false">مرتبط‌ترین</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#most-view" role="tab"
-                                       aria-expanded="false">پربازدیدترین</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#new" role="tab" aria-expanded="true">جدیدترین</a>
-                                </li>
-                                <li>
-                                    <a data-toggle="tab" href="#most-seller" role="tab"
-                                       aria-expanded="false">پرفروش‌ترین‌</a>
+                                    <a class="active" data-toggle="tab" href="#most-seller" role="tab"
+                                       aria-expanded="false">جدیدترین</a>
                                 </li>
                                 <li>
                                     <a data-toggle="tab" href="#down-price" role="tab"
