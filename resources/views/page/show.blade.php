@@ -7,7 +7,6 @@
 @section('content')
 
     <main class="single-product default">
-
         <div class="container">
             <div class="row">
                 <div class="col-12">

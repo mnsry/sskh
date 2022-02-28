@@ -6,11 +6,11 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('page/{page}', function (\TCG\Voyager\Models\Page $page) {
+Route::get('page/{page:slug}', function (\TCG\Voyager\Models\Page $page) {
     return view('page.show', ['page'=>$page]);
 })->name('page.show');
 
-Route::get('post/{post}', function (\TCG\Voyager\Models\Post $post) {
+Route::get('post/{post:slug}', function (\TCG\Voyager\Models\Post $post) {
     return view('post.show', ['post'=>$post]);
 })->name('post.show');
 
