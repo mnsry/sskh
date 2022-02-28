@@ -237,7 +237,7 @@
                                                             </span>{{ setting('site.title') }}</span>
                                                         <span class="product-seller-details-badge-container"></span>
                                                     </div>
-                                                    <a class="product-box-img" href="{{ route('post.show', $post->id) }}">
+                                                    <a class="product-box-img" href="{{ route('post.show', $post) }}">
                                                         <img src="{{ Voyager::Image($post->image) }}" alt="{{ $post->title }}">
                                                     </a>
                                                     <div class="product-box-content">
