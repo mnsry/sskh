@@ -5,7 +5,6 @@
 @section('title', setting('site.title'). ' | '. $page->title)
 
 @section('content')
-
     <main class="single-product default">
         <div class="container">
             <div class="row">
@@ -35,13 +34,13 @@
 
                             <div class="col-lg-8 col-sm-12">
                                 <div class="product-title default">
-                                    <h1><span>{{ $page->title }}</span></h1>
+                                    <h1><span>{{ $post->title }}</span></h1>
                                 </div>
 
                                 <div class="product-variants default">
-                                    {{ $page->excerpt }}
+                                    {{ $post->excerpt }}
                                     <br>
-                                    {!! $page->body !!}
+{{--                                    {!! $post->body !!}--}}
                                 </div>
                             </div>
                         </div>
@@ -50,5 +49,4 @@
             </div>
         </div>
     </main>
-
 @endsection

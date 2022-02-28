@@ -68,7 +68,6 @@
                                     <br>
                                     {!! $post->body !!}
                                 </div>
-
                             </div>
                         </div>
                     </article>
