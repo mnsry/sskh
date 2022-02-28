@@ -24,7 +24,7 @@
 
         <div class="container">
             <div class="row">
-                <aside class="sidebar-page col-12 col-sm-12 col-md-4 col-lg-3 order-2">
+                <aside class="sidebar-page col-12 col-sm-12 col-md-4 col-lg-3 order-3">
                     <div class="box">
                         <div class="box-header">
                             <div class="box-toggle" data-toggle="collapse" href="#collapseExample2" role="button"
@@ -74,7 +74,7 @@
                     </div>
                 </aside>
 
-                <div class="col-12 col-sm-12 col-md-8 col-lg-9 order-1">
+                <div class="col-12 col-sm-12 col-md-8 col-lg-9 order-2 order-md-12">
                     <div class="breadcrumb-section default">
                         <ul class="breadcrumb-list">
                             <li>
