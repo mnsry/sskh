@@ -40,7 +40,7 @@
                                 <div class="product-variants default">
                                     {{ $page->excerpt }}
                                     <br>
-{{--                                    {!! $page->body !!}--}}
+                                    {!! $page->body !!}
                                 </div>
                             </div>
                         </div>
